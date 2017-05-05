@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/QTTest1">
+        <file>Resources/pushbutton.png</file>
+        <file>Resources/skin.css</file>
+        <file>Resources/notice.png</file>
+        <file>Resources/dialog_bg.png</file>
+    </qresource>
+</RCC>

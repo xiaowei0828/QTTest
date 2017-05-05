@@ -1,0 +1,55 @@
+﻿
+QMainWindow {
+	background: white;
+}
+
+QDialog#MainWindow{ 
+	border-image: url(:/QTTest1/Resources/dialog_bg.png) 40 3 3 3;
+	border-width: 40px 3px 3px 3px;
+	padding:-40px -3px -3px -3px;
+}
+
+QPushButton#pushButton_2{
+	font-family: "PingFang SC Regular", "Microsoft YaHei";
+	font-size: 18px;
+	border-image:url(:/QTTest1/Resources/pushbutton.png);
+}
+
+QPushButton#pushButton{}
+
+
+QLineEdit#lineEdit{
+	border-style: none;
+	border-bottom:1px solid #4a90e2;
+	font-family:"Microsoft YaHei";
+	font-size:20px;
+	color:#111111;
+	text-align:left;
+}
+
+QLabel#labelTip{
+	padding-left: 32px;
+	background-image:url(:/QTTest1/Resources/notice.png);
+	background-repeat:no-repeat;
+}
+
+QTableView{
+	border-style:none;
+	text-align: center center;
+}
+
+QTableView::item{
+	text-align: center center;
+	border-bottom: 1px solid #9b9b9b;
+}
+
+QHeaderView{
+	background: rgb(255,255,255);
+	border:none;
+}
+
+QHeaderView::section{
+	background: rgb(255,255,255);
+	border:none;
+	border-bottom: 1px solid #9b9b9b;
+}
