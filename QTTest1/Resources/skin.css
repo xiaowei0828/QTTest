@@ -4,19 +4,21 @@ QMainWindow {
 }
 
 QDialog#MainWindow{ 
-	border-image: url(:/QTTest1/Resources/dialog_bg.png) 40 3 3 3;
+	background-color:white;
 	border-width: 40px 3px 3px 3px;
 	padding:-40px -3px -3px -3px;
 }
 
-QPushButton#pushButton_2{
-	font-family: "PingFang SC Regular", "Microsoft YaHei";
-	font-size: 18px;
-	border-image:url(:/QTTest1/Resources/pushbutton.png);
+QDialog#MainWindow QLabel{
+	font-family:"Microsoft YaHei";
+	font-size: 14px;
 }
 
-QPushButton#pushButton{}
-
+QPushButton#btUploadTemplate,QPushButton#btUploadPaper,QPushButton#btUploadComplete{
+	background:transparent;
+	font-family:"Microsoft YaHei";
+	font-size: 16px;
+}
 
 QLineEdit#lineEdit{
 	border-style: none;
@@ -27,29 +29,71 @@ QLineEdit#lineEdit{
 	text-align:left;
 }
 
+QPushButton#btMinimize{
+	border-image:url(:/QTTest1/Resources/minimize_normal.png);
+	/*background:transparent;
+	background-image: url(:/QTTest1/Resources/minimize_normal.png);
+	background-repeat: no-repeat;
+    background-position: center center;*/
+}
+
+QPushButton#btMinimize:pressed{
+	background-image: url(:/QTTest1/Resources/minimize_pressed.png);
+	background-repeat: no-repeat;
+    background-position: center center;
+}
+
+QPushButton#btClose{
+	border-image:url(:/QTTest1/Resources/close_normal.png);
+	min-width:12px;
+	max-width:12px;
+	min-height:12px;
+	max-height:12px;
+	/*background:transparent;
+	background-image: url(:/QTTest1/Resources/close_normal.png);
+	background-repeat: no-repeat;
+    background-position: center center;*/
+}
+
+QScrollBar{
+	border-radius:8px;
+	background-color:#f4f4f4;
+	width: 5px;
+}
+
+QScrollBar::handle{
+	background:#cbcbcb;
+	
+}
+
+QScrollBar::add-page, QScrollBar::sub-page{
+	background:none;
+}
+
+QScrollBar::add-line, QScrollBar::sub-line{
+	background:transparent;
+	height:0px;
+}
+
+
+QPushButton#btClose:pressed{
+	background-image: url(:/QTTest1/Resources/close_pressed.png);
+	background-repeat: no-repeat;
+    background-position: center center;
+}
+
+
 QLabel#labelTip{
 	padding-left: 32px;
 	background-image:url(:/QTTest1/Resources/notice.png);
 	background-repeat:no-repeat;
 }
 
-QTableView{
-	border-style:none;
-	text-align: center center;
+QWidget#TestInfoTableHeader QLabel, QWidget#TestInfoListHeader QLabel, QWidget#TestInfoItem QLabel{
+	font-family:"Microsoft YaHei";
+	font-size:14px;
 }
 
-QTableView::item{
-	text-align: center center;
-	border-bottom: 1px solid #9b9b9b;
-}
-
-QHeaderView{
-	background: rgb(255,255,255);
-	border:none;
-}
-
-QHeaderView::section{
-	background: rgb(255,255,255);
-	border:none;
-	border-bottom: 1px solid #9b9b9b;
+QWidget#tableWidget{
+	border: 1px solid #979797;
 }

@@ -11,10 +11,8 @@ class TestInfoListHeader : public QWidget
 public:
 	TestInfoListHeader(QWidget *parent = 0);
 	~TestInfoListHeader();
-
-	void SetInfo(const QString& paperName, const QString& subject, const QString& time);
-
 private:
+	void Init();
 	Ui::TestInfoListHeader ui;
 };
 

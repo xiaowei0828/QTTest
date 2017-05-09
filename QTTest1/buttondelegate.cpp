@@ -1,30 +1,35 @@
-#include "buttondelegate.h"
+#include "customtableitemdelegate.h"
 #include <QPainter>
 #include <QApplication>
 #include <QMouseEvent>
 
-ButtonDelegate::ButtonDelegate(QObject *parent)
-	: QStyledItemDelegate(parent)
+CustomTableItemDelegate::CustomTableItemDelegate(QObject *parent)
+	: QStyledItemDelegate(parent),
+	m_pCustomBt(new QPushButton())
+{
+	m_pCustomBt->setStyleSheet(QStringLiteral("background-color:transparent;\
+											  color: blue;\
+											  font-family:\"Microsoft YaHei\";\
+											  font-size:20px; "));
+	/*m_pCustomBt->setText(QStringLiteral("test"));*/
+}
+
+CustomTableItemDelegate::~CustomTableItemDelegate()
 {
 
 }
 
-ButtonDelegate::~ButtonDelegate()
+void CustomTableItemDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex &index) const
 {
-
-}
-
-void ButtonDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex &index) const
-{
-	QStyleOptionButton* button = m_btns.value(index);
+	/*QStyleOptionButton* button = m_btns.value(index);
 	if (!button) {
-		button = new QStyleOptionButton();
-		button->rect = option.rect.adjusted(4, 4, -4, -4);
-		button->text = "X";
-		button->state |= QStyle::State_Enabled;
+	button = new QStyleOptionButton();
+	button->rect = option.rect.adjusted(4, 4, -4, -4);
+	button->text = "X";
+	button->state |= QStyle::State_Enabled;
 
-		(const_cast<ButtonDelegate *>(this))->m_btns.insert(index, button);
-	}
+	(const_cast<CustomTableItemDelegate *>(this))->m_btns.insert(index, button);
+	}*/
 	painter->save();
 
 	if (option.state & QStyle::State_Selected) {
@@ -34,10 +39,16 @@ void ButtonDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option
 	painter->restore();
 	painter->setPen(QColor("#9b9b9b"));
 	painter->drawLine(option.rect.bottomLeft(), option.rect.bottomRight());
-	QApplication::style()->drawControl(QStyle::CE_PushButton, button, painter);
+	QStyleOptionButton* pStyleOption = new QStyleOptionButton();
+	pStyleOption->rect = option.rect;
+	pStyleOption->state |= QStyle::State_Enabled;
+	pStyleOption->text = QStringLiteral("test");
+
+	
+	QApplication::style()->drawControl(QStyle::CE_PushButton, pStyleOption, painter, m_pCustomBt.data());
 }
 
-bool ButtonDelegate::editorEvent(QEvent *event, QAbstractItemModel *model, 
+bool CustomTableItemDelegate::editorEvent(QEvent *event, QAbstractItemModel *model, 
 	const QStyleOptionViewItem &option, const QModelIndex &index)
 {
 	if (event->type() == QEvent::MouseButtonPress) {
@@ -45,16 +56,16 @@ bool ButtonDelegate::editorEvent(QEvent *event, QAbstractItemModel *model,
 		QMouseEvent* e = (QMouseEvent*)event;
 
 		QVariant data = model->data(index);
-		if (option.rect.adjusted(4, 4, -4, -4).contains(e->x(), e->y()) && m_btns.contains(index)) {
+		/*if (option.rect.adjusted(4, 4, -4, -4).contains(e->x(), e->y()) && m_btns.contains(index)) {
 			m_btns.value(index)->state |= QStyle::State_Sunken;
-		}
+			}*/
 	}
 	if (event->type() == QEvent::MouseButtonRelease) {
 		QMouseEvent* e = (QMouseEvent*)event;
 
-		if (option.rect.adjusted(4, 4, -4, -4).contains(e->x(), e->y()) && m_btns.contains(index)) {
+		/*if (option.rect.adjusted(4, 4, -4, -4).contains(e->x(), e->y()) && m_btns.contains(index)) {
 			m_btns.value(index)->state &= (~QStyle::State_Sunken);
-		}
+			}*/
 	}
 	return true;
 }

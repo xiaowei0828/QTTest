@@ -8,7 +8,7 @@
 #include "resizedialog.h"
 
 class TableModel;
-class ButtonDelegate;
+class CustomTableItemDelegate;
 class MainWindow : public resizeDialog
 {
 	Q_OBJECT
@@ -26,8 +26,7 @@ protected:
 private:
 	Ui::MainWindow ui;
 	TableModel* m_pModel;
-	ButtonDelegate* m_pBtDelegate;
-	QScopedPointer<QPushButton> m_pButton;
+	CustomTableItemDelegate* m_pBtDelegate;
 };
 
 #endif // MAINWINDOW_H

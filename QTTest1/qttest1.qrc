@@ -4,5 +4,9 @@
         <file>Resources/skin.css</file>
         <file>Resources/notice.png</file>
         <file>Resources/dialog_bg.png</file>
+        <file>Resources/close_normal.png</file>
+        <file>Resources/close_pressed.png</file>
+        <file>Resources/minimize_normal.png</file>
+        <file>Resources/minimize_pressed.png</file>
     </qresource>
 </RCC>

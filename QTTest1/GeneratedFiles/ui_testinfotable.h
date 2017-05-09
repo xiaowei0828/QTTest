@@ -26,7 +26,8 @@ public:
     {
         if (TestInfoTable->objectName().isEmpty())
             TestInfoTable->setObjectName(QStringLiteral("TestInfoTable"));
-        TestInfoTable->resize(400, 300);
+        TestInfoTable->resize(1238, 16);
+        TestInfoTable->setMaximumSize(QSize(16777215, 16));
 
         retranslateUi(TestInfoTable);
 

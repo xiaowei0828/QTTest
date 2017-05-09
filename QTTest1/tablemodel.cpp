@@ -1,4 +1,6 @@
 #include "tablemodel.h"
+#include <QFont>
+#include <QSize>
 
 TableModel::TableModel(QObject *parent) :
 QAbstractTableModel(parent)
@@ -38,6 +40,10 @@ QVariant TableModel::data(const QModelIndex &index, int role) const
 	{
 		return int(Qt::AlignCenter | Qt::AlignHCenter);
 	}
+	else if (role == Qt::FontRole)
+	{
+		return QFont(QStringLiteral("Microsoft YaHei"), 12);
+	}
 	return QVariant();
 }
 
@@ -47,6 +53,7 @@ Qt::ItemFlags TableModel::flags(const QModelIndex &index) const
 		return Qt::NoItemFlags;
 
 	Qt::ItemFlags flag = QAbstractItemModel::flags(index);
+	flag &= ~Qt::ItemIsSelectable;
 
 	// flag|=Qt::ItemIsEditable // 设置单元格可编辑,此处注释,单元格无法被编辑
 	return flag;

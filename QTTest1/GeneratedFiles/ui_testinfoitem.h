@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'Testinfolistheader.ui'
+** Form generated from reading UI file 'testinfoitem.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef UI_TESTINFOLISTHEADER_H
-#define UI_TESTINFOLISTHEADER_H
+#ifndef UI_TESTINFOITEM_H
+#define UI_TESTINFOITEM_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
@@ -17,13 +17,15 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QSpacerItem>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
-class Ui_TestInfoListHeader
+class Ui_TestInfoItem
 {
 public:
+    QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
     QSpacerItem *horizontalSpacer;
     QLabel *label;
@@ -37,20 +39,23 @@ public:
     QLabel *label_5;
     QSpacerItem *horizontalSpacer_6;
 
-    void setupUi(QWidget *TestInfoListHeader)
+    void setupUi(QWidget *TestInfoItem)
     {
-        if (TestInfoListHeader->objectName().isEmpty())
-            TestInfoListHeader->setObjectName(QStringLiteral("TestInfoListHeader"));
-        TestInfoListHeader->resize(1238, 49);
-        horizontalLayout = new QHBoxLayout(TestInfoListHeader);
+        if (TestInfoItem->objectName().isEmpty())
+            TestInfoItem->setObjectName(QStringLiteral("TestInfoItem"));
+        TestInfoItem->resize(1238, 50);
+        verticalLayout = new QVBoxLayout(TestInfoItem);
+        verticalLayout->setSpacing(6);
+        verticalLayout->setContentsMargins(11, 11, 11, 11);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        horizontalLayout = new QHBoxLayout();
         horizontalLayout->setSpacing(6);
-        horizontalLayout->setContentsMargins(11, 11, 11, 11);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalSpacer = new QSpacerItem(34, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout->addItem(horizontalSpacer);
 
-        label = new QLabel(TestInfoListHeader);
+        label = new QLabel(TestInfoItem);
         label->setObjectName(QStringLiteral("label"));
         QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
@@ -67,7 +72,7 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer_2);
 
-        label_2 = new QLabel(TestInfoListHeader);
+        label_2 = new QLabel(TestInfoItem);
         label_2->setObjectName(QStringLiteral("label_2"));
         sizePolicy.setHeightForWidth(label_2->sizePolicy().hasHeightForWidth());
         label_2->setSizePolicy(sizePolicy);
@@ -80,7 +85,7 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer_3);
 
-        label_3 = new QLabel(TestInfoListHeader);
+        label_3 = new QLabel(TestInfoItem);
         label_3->setObjectName(QStringLiteral("label_3"));
         sizePolicy.setHeightForWidth(label_3->sizePolicy().hasHeightForWidth());
         label_3->setSizePolicy(sizePolicy);
@@ -93,7 +98,7 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer_4);
 
-        label_4 = new QLabel(TestInfoListHeader);
+        label_4 = new QLabel(TestInfoItem);
         label_4->setObjectName(QStringLiteral("label_4"));
         sizePolicy.setHeightForWidth(label_4->sizePolicy().hasHeightForWidth());
         label_4->setSizePolicy(sizePolicy);
@@ -106,7 +111,7 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer_5);
 
-        label_5 = new QLabel(TestInfoListHeader);
+        label_5 = new QLabel(TestInfoItem);
         label_5->setObjectName(QStringLiteral("label_5"));
         sizePolicy.setHeightForWidth(label_5->sizePolicy().hasHeightForWidth());
         label_5->setSizePolicy(sizePolicy);
@@ -120,27 +125,30 @@ public:
         horizontalLayout->addItem(horizontalSpacer_6);
 
 
-        retranslateUi(TestInfoListHeader);
+        verticalLayout->addLayout(horizontalLayout);
 
-        QMetaObject::connectSlotsByName(TestInfoListHeader);
+
+        retranslateUi(TestInfoItem);
+
+        QMetaObject::connectSlotsByName(TestInfoItem);
     } // setupUi
 
-    void retranslateUi(QWidget *TestInfoListHeader)
+    void retranslateUi(QWidget *TestInfoItem)
     {
-        TestInfoListHeader->setWindowTitle(QApplication::translate("TestInfoListHeader", "TestInfoListHeader", 0));
-        label->setText(QApplication::translate("TestInfoListHeader", "TextLabel", 0));
-        label_2->setText(QApplication::translate("TestInfoListHeader", "TextLabel", 0));
-        label_3->setText(QApplication::translate("TestInfoListHeader", "TextLabel", 0));
-        label_4->setText(QApplication::translate("TestInfoListHeader", "TextLabel", 0));
-        label_5->setText(QApplication::translate("TestInfoListHeader", "TextLabel", 0));
+        TestInfoItem->setWindowTitle(QApplication::translate("TestInfoItem", "TestInfoItem", 0));
+        label->setText(QApplication::translate("TestInfoItem", "TextLabel", 0));
+        label_2->setText(QApplication::translate("TestInfoItem", "TextLabel", 0));
+        label_3->setText(QApplication::translate("TestInfoItem", "TextLabel", 0));
+        label_4->setText(QApplication::translate("TestInfoItem", "TextLabel", 0));
+        label_5->setText(QApplication::translate("TestInfoItem", "TextLabel", 0));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class TestInfoListHeader: public Ui_TestInfoListHeader {};
+    class TestInfoItem: public Ui_TestInfoItem {};
 } // namespace Ui
 
 QT_END_NAMESPACE
 
-#endif // UI_TESTINFOLISTHEADER_H
+#endif // UI_TESTINFOITEM_H
